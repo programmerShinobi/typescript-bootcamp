@@ -1,6 +1,6 @@
 /**
- * Buat function untuk menghitung jarak antar kota A dan B, Jika di ketahui jarak : S= 1/2*a*t^2
- * menggunakan typescript dengan sample Output dibawah ini :
+ * Buat function untuk menghitung jarak antar kota A dan B,
+ * Jika di ketahui jarak : S= 1/2*a*t^2 :
  * 
  * sample output:
  * 
