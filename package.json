@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@angular/core": "^15.0.4",
     "ts-node": "^10.9.1"
   }
 }
