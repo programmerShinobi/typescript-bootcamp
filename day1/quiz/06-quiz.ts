@@ -15,11 +15,6 @@
  * 13.695801445917125 :
  * console.info(getCoordinate(3.2, 4.5, -4.4, -5));
  * 
- * @param x1 
- * @param y1 
- * @param x2 
- * @param y2 
- * @returns 
  */
 
 function getCoordinate(x1: any, y1: any, x2: any, y2: any): number | string{
@@ -41,4 +36,4 @@ function getCoordinate(x1: any, y1: any, x2: any, y2: any): number | string{
 console.info(getCoordinate(3, 4, 3, -5)); // return 9
 console.info(getCoordinate("-1", "3", "-1", "2")); // return 1
 console.info(getCoordinate("x", "2", "-y", "-2")); // return input koordinat dalam angka
-console.info(getCoordinate(3.2, 4.5, -4.4, -5)); // return 13.695801445917125
+console.info(getCoordinate(3.23341154681199, 5.55, -5.5, -5)); // return 13.695801445917125
