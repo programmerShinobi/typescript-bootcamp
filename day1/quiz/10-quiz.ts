@@ -60,7 +60,7 @@ function convertToRupiah(value: any, currencyType: any): any {
       let rupiah: string = split[0].substr(0, sisa);
 
       /**
-       * variabel bernama ribuan yang diisi dengan hasil dari method match()
+       * Variabel bernama ribuan yang diisi dengan hasil dari method match()
        * pada string yang diambil dari bagian pertama dari array split yang diambil dari indeks sisa
        * kemudian diikuti dengan regex /\d{3}/gi.
        * 
@@ -87,7 +87,7 @@ function convertToRupiah(value: any, currencyType: any): any {
       }
 
       /**
-       * variabel rupiah diisi dengan hasil dari menggabungkan bagian pertama dari array split dengan tanda koma (,)
+       * Variabel rupiah diisi dengan hasil dari menggabungkan bagian pertama dari array split dengan tanda koma (,)
        * dan bagian kedua dari array split,
        * atau hanya dengan bagian pertama dari array split jika bagian kedua tidak terdefinisi (undefined).
        * 
