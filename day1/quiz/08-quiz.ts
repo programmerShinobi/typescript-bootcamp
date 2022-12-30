@@ -47,6 +47,7 @@ function elapsedTime(seconds : number | string): string {
          * 
          */
 
+        // Math.floor() : pembulatan bilangan
         const days = Math.floor(seconds / 86400);
         const hours = Math.floor((seconds % 86400) / 3600);
         const minutes = Math.floor(((seconds % 86400) % 3600) / 60);
@@ -66,6 +67,7 @@ function elapsedTime(seconds : number | string): string {
             result += secs + ' detik';
         }
 
+        // trim() : hapus space kosong
         return "SUCCESS : "+ result.trim();
 
     } catch (error : any) {
