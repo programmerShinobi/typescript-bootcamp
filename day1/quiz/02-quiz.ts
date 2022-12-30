@@ -15,7 +15,7 @@
  * 
  */
 
-function calculateDistance(a: string | number, t: string | number): any {
+function calculateDistance(a: string | number, t: string | number): string|number {
   try {
 
     // cek apakah a dan t merupakan string yang dapat diubah menjadi number

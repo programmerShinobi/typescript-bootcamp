@@ -11,7 +11,7 @@
  * console.info(sumDigit("a123")); // a123 is not number, try again...
  */
 
-function sumDigit(n: any): any {
+function sumDigit(n: any): number | string {
     try {
         // pastikan input adalah number
         if (isNaN(n)) {

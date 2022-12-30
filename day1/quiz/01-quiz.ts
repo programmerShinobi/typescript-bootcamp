@@ -16,7 +16,7 @@
  * 
  */
 
-function getAreaCircle(radius: any ): any {
+function getAreaCircle(radius: any ): number | string {
   try {
     if (isNaN(radius)) {
       // jika tidak dapat diubah menjadi number, return "inputan harus dalam angka"

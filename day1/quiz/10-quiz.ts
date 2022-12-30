@@ -11,7 +11,7 @@
  * 
  */
 
-function convertToRupiah(value: any, currencyType: any): any {
+function convertToRupiah(value: any, currencyType: any): string {
   try {
     const conversionRates: any = {
       usd: 1438250,

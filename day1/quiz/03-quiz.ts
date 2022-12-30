@@ -15,7 +15,7 @@
  * 
  */
 
-function fareinheitToKelvin(fareinheit: string | number): any {
+function fareinheitToKelvin(fareinheit: string | number): string | number {
   try {
     // cek apakah fareinheit merupakan string yang dapat diubah menjadi number
     const parsedFareinheit = Number(fareinheit);

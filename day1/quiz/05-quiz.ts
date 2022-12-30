@@ -20,7 +20,7 @@
  * 
  */
 
-function getSalesDiscount(price: any, tax: any, discount: any): any {
+function getSalesDiscount(price: any, tax: any, discount: any): number | string {
   try {
     if (isNaN(price) && isNaN(tax) && isNaN(discount)) {
       throw new Error("FAILED  : Price, Tax, & Discount harus dalam angka");

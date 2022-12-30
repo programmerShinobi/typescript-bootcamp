@@ -23,7 +23,7 @@
  * 
  */
 
-function getSalesTax(price: any, tax: any): any {
+function getSalesTax(price: any, tax: any): number | string {
   try {
     if (isNaN(price) && isNaN(tax)) {
       throw new Error("FAILED  : Price & Pajak harus dalam angka");
