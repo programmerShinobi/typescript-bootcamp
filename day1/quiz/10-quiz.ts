@@ -19,7 +19,6 @@ function convertToRupiah(value: any, currencyType: any): any {
       yen: 130120
     };
   
-  
     if (!(conversionRates[currencyType])) {
       throw new Error("FAILED  : No match currency");
     } else {
@@ -45,38 +44,6 @@ function convertToRupiah(value: any, currencyType: any): any {
     return error.message;
   }
 }
-
-// function formatRupiah(angka: string): any {
-//   let numberString: string = angka.replace(/[^,\d]/g, '').toString(),
-//     split: string[] = numberString.split(','),
-//     sisa: number = split[0].length % 3,
-//     rupiah: string = split[0].substr(0, sisa),
-//     ribuan: string[] = split[0].substr(sisa).match(/\d{3}/gi);
-
-//   if (ribuan) {
-//     let separator = sisa ? '.' : '';
-//     rupiah += separator + ribuan.join('.');
-//   }
-
-//   return rupiah;
-// }
-
-function formatRupiah(angka: any): any {
-  let numberString: string = angka.replace(/[^,\d]/g, '').toString(),
-    split: Array<string> = numberString.split(','),
-    sisa: number = split[0].length % 3,
-    rupiah: string = split[0].substr(0, sisa),
-    ribuan: Array<string> | null = split[0].substr(sisa).match(/\d{3}/gi);
-
-
-  if (ribuan) {
-    let separator = sisa ? '.' : '';
-    rupiah += separator + ribuan.join('.');
-  }
-
-  return rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-}
-
 
 console.info(convertToRupiah(1000,'yen')); // 1000 yen = Rp.130.120
 console.info(convertToRupiah(100, 'usd')); // 100 dollar = Rp.1.438.250
