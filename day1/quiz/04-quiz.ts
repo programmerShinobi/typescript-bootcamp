@@ -46,7 +46,9 @@ function getSalesTax(price: any, tax: any): number | string {
 console.info(getSalesTax("a", 1)); // Price harus dalam angka
 console.info(getSalesTax(500, "pajak")); // Price & Pajak harus dalam angka
 console.info(getSalesTax("harga", "pajak")); // Pajak harus dalam angka
-console.info(getSalesTax(4500, 5)); // contoh output dibawah
-// Total sales: Rp.4500
-// Pajak: 5%
-// TotalHargaPajak: Rp.4725
+console.info(getSalesTax(4500, 5)); // hasil output dibawah
+/**
+ * SUCCESS :  Total sales     : Rp.4500
+              Pajak           : 0.5
+              TotalHargaPajak : Rp.4505
+ */

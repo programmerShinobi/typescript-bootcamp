@@ -46,10 +46,12 @@ function getSalesDiscount(price: any, tax: any, discount: any): number | string 
 console.info(getSalesDiscount("a", 1, 5)); // Price harus dalam angka
 console.info(getSalesDiscount(500, "pajak", 5)); // Tax harus dalam angka
 console.info(getSalesDiscount("harga", "pajak", "discount")); // Price, Tax, & Discount harus dalam angka
-console.info(getSalesDiscount(4500, 10, 5)); // contoh output dibawah
-// Total sales             : Rp.4500
-// Discount (5%)           : Rp.225
-// PriceAfterDiscount      : Rp.4275
-// Pajak (10%)             : Rp.427.5
-// -----------------------------------
-// TotalPayment            : Rp.4702.5
+console.info(getSalesDiscount(4500, 10, 5)); // hasil output dibawah
+/**
+ * SUCCESS :  Total sales           : Rp.4500
+              Discount (5%)         : Rp.225
+              PriceAfterDiscount    : Rp.4275
+              Pajak (10%)           : Rp.427.5
+              ---------------------------------
+              TotalPayment          : Rp.4702.5
+ */
