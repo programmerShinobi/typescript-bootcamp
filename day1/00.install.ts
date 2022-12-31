@@ -1,16 +1,15 @@
 /**
- * pastikan versi typescript sudah ada,
- * cara pengecekannya dengan pengecekan di terminal vs code
- * runn code di bawah ini..
+ * pastikan versi typescript sudah ada di terminal vs code
+ * eksekusi code di bawah ini..
  * tsc --v 
  * npm install -g ts-node
- * cek kembali versi typescript dengan cara run code di bawah ini ..
+ * cek kembali versi typescript dengan eksekusi code di bawah ini ..
  * tsc --v
- * Jika tidak ada maka run code di bawah ini..
+ * Jika tidak ada, maka eksekusi code di bawah ini..
  * set-ExecutionPolicy RemoteSigned -Scope CurrentUser
  * tsc --v 
  * --------------------------------------------------------------------------
- * untuk run gunakan run terminal di bawah
- * ts-node <nama file>
+ * untuk run coding gunakan code  di bawah ini ..
+ * ts-node <nama direktori file>
  */
 
