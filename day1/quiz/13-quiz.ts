@@ -1,3 +1,17 @@
+/**
+ * Buat function isPalindrome(angka)
+ * untuk men-cek apakah 4 digit inputan angka palindrome atau tidak, Hint : charAt
+ * 
+ * sample output :
+ * 
+ * console.info(isPalindrome("abcd")); // abcd is not an number
+ * console.info(isPalindrome("123a")); // 123 is not number
+ * console.info(isPalindrome("1234")); // 1234 is not palindrome
+ * console.info(isPalindrome(1221)); // 1221 is palindrome
+ * console.info(isPalindrome("8888")); // 8888 is palindrome
+ * 
+ */
+
 function isPalindrome(angka: any): string {
     try {
         
