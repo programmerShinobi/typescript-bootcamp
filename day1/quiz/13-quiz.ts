@@ -26,6 +26,26 @@ function isPalindrome(angka: any): string {
           throw new Error(`FAILED  : ${angka} is not a 4-digit number`);
         }
       
+        /**
+         * function isPalindrome akan diconvert ke string menggunakan angka.toString()
+         * Misalnya, jika angka yang dimasukkan adalah 1221,
+         * maka angka.toString() akan menghasilkan string "1221".
+         * 
+         * String hasil dari angka.toString()
+         * akan dipetakan ke dalam array of characters dengan menggunakan method charAt().
+         * Method charAt() akan mengembalikan karakter pada indeks tertentu dari string.
+         * Misalnya, "1221".charAt(0) akan mengembalikan karakter "1", "1221".charAt(1)
+         * akan mengembalikan karakter "2", dan seterusnya
+         * 
+         * Setelah itu, akan dilakukan pembandingan antara karakter pada indeks ke-0
+         * dengan karakter pada indeks ke-3,
+         * serta karakter pada indeks ke-1 dengan karakter pada indeks ke-2.
+         * Jika karakter-karakter tersebut sama,
+         * maka input akan dikategorikan sebagai palindrome.
+         * Namun jika salah satu pembandingan tersebut tidak sesuai,
+         * maka input akan dikategorikan sebagai bukan palindrome.
+         * 
+         */
         // Cek apakah input merupakan palindrome dengan membandingkan digit pertama
         // dan terakhir, kedua dan sebelum terakhir, dan seterusnya
         if (angka.toString().charAt(0) === angka.toString().charAt(3) &&
