@@ -3,7 +3,7 @@ class MakananInPro {
     protected jenis: string = ``;
     protected kalori: number = 0;
     protected harga: number = 0;
-    protected satuan: string = ``;
+    protected static satuan: string = ``;
     
     getJenis(): string {
         return `Jenis makanan ini ${this.jenis}`;
@@ -91,7 +91,7 @@ class MakananInPro {
         return `Harga makanan ini Rp.${rupiah},-`;
     }
 
-    getSatuan(): string {
+    static getSatuan(): string {
         return `Satuan makanan ini ${this.satuan}`;
     }
 
@@ -176,7 +176,7 @@ class MakananInProAsalDaerahProtected extends MakananInPro {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${MakananInProAsalDaerahProtected.satuan}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
     }
 
     setNama(nama: string) {
@@ -191,7 +191,7 @@ class MakananInProAsalDaerahProtected extends MakananInPro {
         this.kalori = kalori;
     }
 
-    setSatuan(satuan: string) {
+    static setSatuan(satuan: string) {
         this.satuan = satuan;
     }
 
@@ -205,11 +205,13 @@ class MakananInProAsalDaerahProtected extends MakananInPro {
 
 }
 
+// insert static satuan : terakhir saja
+MakananInProAsalDaerahProtected.setSatuan('porsi');
+
 let MainCourseInPro = new MakananInProAsalDaerahProtected();
 MainCourseInPro.setNama('Nasi Padang');
 MainCourseInPro.setJenis('Main Course');
 MainCourseInPro.setKalori(112);
-MainCourseInPro.setSatuan('porsi');
 MainCourseInPro.setHarga(7000);
 MainCourseInPro.setAsalDaerah('Padang');
 
@@ -217,7 +219,6 @@ let DessertInPro = new MakananInProAsalDaerahProtected();
 DessertInPro.setNama('Pallu Butung');
 DessertInPro.setJenis('Dessert');
 DessertInPro.setKalori(301);
-DessertInPro.setSatuan('porsi');
 DessertInPro.setHarga(15000);
 DessertInPro.setAsalDaerah('Makassar');
 
@@ -225,7 +226,6 @@ let AppetizerInPro = new MakananInProAsalDaerahProtected();
 AppetizerInPro.setNama('Asinan Bogor');
 AppetizerInPro.setJenis('Appetizer');
 AppetizerInPro.setKalori(130);
-AppetizerInPro.setSatuan('porsi');
 AppetizerInPro.setHarga(5000);
 AppetizerInPro.setAsalDaerah('Bogor');
 
@@ -237,7 +237,7 @@ console.info(MainCourseInPro.getJenis());
 console.info(MainCourseInPro.getNama());
 console.info(MainCourseInPro.getKalori());
 console.info(MainCourseInPro.getHarga());
-console.info(MainCourseInPro.getSatuan());
+console.info(MakananInProAsalDaerahProtected.getSatuan());
 console.info(MainCourseInPro.getAsalDaerah());
 console.info(`------------------------------`);
 console.info(MainCourseInPro.getSemua());
@@ -251,7 +251,7 @@ console.info(DessertInPro.getJenis());
 console.info(DessertInPro.getNama());
 console.info(DessertInPro.getKalori());
 console.info(DessertInPro.getHarga());
-console.info(DessertInPro.getSatuan());
+console.info(MakananInProAsalDaerahProtected.getSatuan());
 console.info(DessertInPro.getAsalDaerah());
 console.info(`--------------------------------`);
 console.info(DessertInPro.getSemua());
@@ -265,7 +265,7 @@ console.info(AppetizerInPro.getJenis());
 console.info(AppetizerInPro.getNama());
 console.info(AppetizerInPro.getKalori());
 console.info(AppetizerInPro.getHarga());
-console.info(AppetizerInPro.getSatuan());
+console.info(MakananInProAsalDaerahProtected.getSatuan());
 console.info(AppetizerInPro.getAsalDaerah());
 console.info(`-----------------------------`);
 console.info(AppetizerInPro.getSemua());

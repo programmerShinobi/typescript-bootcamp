@@ -3,14 +3,14 @@ class MakananInConstructor {
     jenis: string = ``;
     kalori: number = 0;
     harga: number = 0;
-    satuan: string = ``;
+    static satuan: string = ``;
 
     constructor(nama: string, jenis: string, kalori:number, harga:number, satuan:string) {
         this.nama = nama;
         this.jenis = jenis;
         this.kalori = kalori;
         this.harga = harga;
-        this.satuan = satuan;
+        MakananInConstructor.satuan = satuan;
     }
     
     getJenis(): string {
@@ -99,7 +99,7 @@ class MakananInConstructor {
         return `Harga makanan ini Rp.${rupiah},-`;
     }
 
-    getSatuan(): string {
+    static getSatuan(): string {
         return `Satuan makanan ini ${this.satuan}`;
     }
 }
@@ -187,15 +187,16 @@ class MakananInConstructorAsalDaerah extends MakananInConstructor {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${MakananInConstructorAsalDaerah.satuan}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
     }
 
 }
 
-let MakananInConstructorAsalDaerahBaru1 = new MakananInConstructorAsalDaerah('Nasi Padang', 'Main Course', 112, 7000, 'porsi', 'Padang');
+let MakananInConstructorAsalDaerahBaru1 = new MakananInConstructorAsalDaerah('Nasi Padang', 'Main Course', 112, 7000, '', 'Padang');
 
-let MakananInConstructorAsalDaerahBaru2 = new MakananInConstructorAsalDaerah('Pallu Butung', 'Dessert', 301, 15000, 'porsi', 'Makassar');
+let MakananInConstructorAsalDaerahBaru2 = new MakananInConstructorAsalDaerah('Pallu Butung', 'Dessert', 301, 15000, '', 'Makassar');
 
+// insert static satuan : terakhir saja
 let MakananInConstructorAsalDaerahBaru3 = new MakananInConstructorAsalDaerah('Asinan Bogor', 'Appetizer', 130, 5000, 'porsi', 'Bogor');
 
 
@@ -206,7 +207,7 @@ console.info(MakananInConstructorAsalDaerahBaru1.getJenis());
 console.info(MakananInConstructorAsalDaerahBaru1.getNama());
 console.info(MakananInConstructorAsalDaerahBaru1.getKalori());
 console.info(MakananInConstructorAsalDaerahBaru1.getHarga());
-console.info(MakananInConstructorAsalDaerahBaru1.getSatuan());
+console.info(MakananInConstructorAsalDaerah.getSatuan());
 console.info(MakananInConstructorAsalDaerahBaru1.getAsalDaerah());
 console.info(`------------------------------`);
 console.info(MakananInConstructorAsalDaerahBaru1.getSemua());
@@ -220,7 +221,7 @@ console.info(MakananInConstructorAsalDaerahBaru2.getJenis());
 console.info(MakananInConstructorAsalDaerahBaru2.getNama());
 console.info(MakananInConstructorAsalDaerahBaru2.getKalori());
 console.info(MakananInConstructorAsalDaerahBaru2.getHarga());
-console.info(MakananInConstructorAsalDaerahBaru2.getSatuan());
+console.info(MakananInConstructorAsalDaerah.getSatuan());
 console.info(MakananInConstructorAsalDaerahBaru2.getAsalDaerah());
 console.info(`--------------------------------`);
 console.info(MakananInConstructorAsalDaerahBaru2.getSemua());
@@ -234,7 +235,7 @@ console.info(MakananInConstructorAsalDaerahBaru3.getJenis());
 console.info(MakananInConstructorAsalDaerahBaru3.getNama());
 console.info(MakananInConstructorAsalDaerahBaru3.getKalori());
 console.info(MakananInConstructorAsalDaerahBaru3.getHarga());
-console.info(MakananInConstructorAsalDaerahBaru3.getSatuan());
+console.info(MakananInConstructorAsalDaerah.getSatuan());
 console.info(MakananInConstructorAsalDaerahBaru3.getAsalDaerah());
 console.info(`-----------------------------`);
 console.info(MakananInConstructorAsalDaerahBaru3.getSemua());

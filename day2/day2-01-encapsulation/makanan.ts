@@ -171,6 +171,7 @@ class Makanan {
     
 }
 
+// insert static satuan : terakhir saja
 Makanan.satuan = 'porsi';
 
 let MakananBaru1 = new Makanan();

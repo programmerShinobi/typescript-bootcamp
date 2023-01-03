@@ -179,6 +179,7 @@ class MakananInheritanceAsalDaerah extends MakananInheritance {
 
 }
 
+// insert static satuan : terakhir saja
 MakananInheritanceAsalDaerah.satuan = 'porsi';
 
 let MakananInheritanceAsalDaerahBaru1 = new MakananInheritanceAsalDaerah();

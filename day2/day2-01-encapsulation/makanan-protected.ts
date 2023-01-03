@@ -191,6 +191,7 @@ class MakananProtected {
 
 }
 
+// insert static satuan : terakhir saja
 MakananProtected.setSatuan('porsi');
 
 let MainCourse = new MakananProtected();

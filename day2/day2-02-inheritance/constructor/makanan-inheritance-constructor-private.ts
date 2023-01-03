@@ -3,14 +3,14 @@ class MakananInConstructorPri {
     private jenis: string = ``;
     private kalori: number = 0;
     private harga: number = 0;
-    private satuan: string = ``;
+    private static satuan: string = ``;
 
     constructor(nama: string, jenis: string, kalori:number, harga:number, satuan:string) {
         this.nama = nama;
         this.jenis = jenis;
         this.kalori = kalori;
         this.harga = harga;
-        this.satuan = satuan;
+        MakananInConstructorPri.satuan = satuan;
     }
     
     getJenis(): string {
@@ -99,7 +99,7 @@ class MakananInConstructorPri {
         return `Harga makanan ini Rp.${rupiah},-`;
     }
 
-    getSatuan(): string {
+    static getSatuan(): string {
         return `Satuan makanan ini ${this.satuan}`;
     }
 
@@ -115,7 +115,7 @@ class MakananInConstructorPri {
         return `${this.kalori}`;
     }
 
-    setSatuan() {
+    static setSatuan() {
         return `${this.satuan}`;
     }
 
@@ -208,15 +208,16 @@ class MakananInConstructorPriAsalDaerah extends MakananInConstructorPri {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${super.setJenis()} salah satunya, yaitu ${super.setNama()} memiliki tingkat kalori ${super.setKalori()} dengan harga Rp.${rupiah},- /${super.setSatuan()}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
+        return `Jenis makanan ${super.setJenis()} salah satunya, yaitu ${super.setNama()} memiliki tingkat kalori ${super.setKalori()} dengan harga Rp.${rupiah},- /${MakananInConstructorPriAsalDaerah.setSatuan()}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
     }
 
 }
 
-let MakananInConstructorPriAsalDaerahBaru1 = new MakananInConstructorPriAsalDaerah('Nasi Padang', 'Main Course', 112, 7000, 'porsi', 'Padang');
+let MakananInConstructorPriAsalDaerahBaru1 = new MakananInConstructorPriAsalDaerah('Nasi Padang', 'Main Course', 112, 7000, '', 'Padang');
 
-let MakananInConstructorPriAsalDaerahBaru2 = new MakananInConstructorPriAsalDaerah('Pallu Butung', 'Dessert', 301, 15000, 'porsi', 'Makassar');
+let MakananInConstructorPriAsalDaerahBaru2 = new MakananInConstructorPriAsalDaerah('Pallu Butung', 'Dessert', 301, 15000, '', 'Makassar');
 
+// insert static satuan : terakhir saja
 let MakananInConstructorPriAsalDaerahBaru3 = new MakananInConstructorPriAsalDaerah('Asinan Bogor', 'Appetizer', 130, 5000, 'porsi', 'Bogor');
 
 
@@ -227,7 +228,7 @@ console.info(MakananInConstructorPriAsalDaerahBaru1.getJenis());
 console.info(MakananInConstructorPriAsalDaerahBaru1.getNama());
 console.info(MakananInConstructorPriAsalDaerahBaru1.getKalori());
 console.info(MakananInConstructorPriAsalDaerahBaru1.getHarga());
-console.info(MakananInConstructorPriAsalDaerahBaru1.getSatuan());
+console.info(MakananInConstructorPriAsalDaerah.getSatuan());
 console.info(MakananInConstructorPriAsalDaerahBaru1.getAsalDaerah());
 console.info(`------------------------------`);
 console.info(MakananInConstructorPriAsalDaerahBaru1.getSemua());
@@ -241,7 +242,7 @@ console.info(MakananInConstructorPriAsalDaerahBaru2.getJenis());
 console.info(MakananInConstructorPriAsalDaerahBaru2.getNama());
 console.info(MakananInConstructorPriAsalDaerahBaru2.getKalori());
 console.info(MakananInConstructorPriAsalDaerahBaru2.getHarga());
-console.info(MakananInConstructorPriAsalDaerahBaru2.getSatuan());
+console.info(MakananInConstructorPriAsalDaerah.getSatuan());
 console.info(MakananInConstructorPriAsalDaerahBaru2.getAsalDaerah());
 console.info(`--------------------------------`);
 console.info(MakananInConstructorPriAsalDaerahBaru2.getSemua());
@@ -255,7 +256,7 @@ console.info(MakananInConstructorPriAsalDaerahBaru3.getJenis());
 console.info(MakananInConstructorPriAsalDaerahBaru3.getNama());
 console.info(MakananInConstructorPriAsalDaerahBaru3.getKalori());
 console.info(MakananInConstructorPriAsalDaerahBaru3.getHarga());
-console.info(MakananInConstructorPriAsalDaerahBaru3.getSatuan());
+console.info(MakananInConstructorPriAsalDaerah.getSatuan());
 console.info(MakananInConstructorPriAsalDaerahBaru3.getAsalDaerah());
 console.info(`-----------------------------`);
 console.info(MakananInConstructorPriAsalDaerahBaru3.getSemua());
