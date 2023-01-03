@@ -3,7 +3,7 @@ class MakananProtected {
     protected jenis: string = ``;
     protected kalori: number = 0;
     protected harga: number = 0;
-    protected satuan: string = ``;
+    protected static satuan: string = ``;
     
     getJenis(): string {
         return `Jenis makanan ini ${this.jenis}`;
@@ -91,8 +91,8 @@ class MakananProtected {
         return `Harga makanan ini Rp.${rupiah},-`;
     }
 
-    getSatuan(): string {
-        return `Satuan makanan ini ${this.satuan}`;
+    static getSatuan(): string {
+        return `Satuan makanan ini ${MakananProtected.satuan}`;
     }
 
     getSemua(): string {
@@ -166,7 +166,7 @@ class MakananProtected {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${MakananProtected.satuan}`;
     }
 
     setNama(nama: string) {
@@ -181,7 +181,7 @@ class MakananProtected {
         this.kalori = kalori;
     }
 
-    setSatuan(satuan: string) {
+    static setSatuan(satuan: string) {
         this.satuan = satuan;
     }
 
@@ -191,26 +191,24 @@ class MakananProtected {
 
 }
 
+MakananProtected.setSatuan('porsi');
 
 let MainCourse = new MakananProtected();
 MainCourse.setNama('Nasi');
 MainCourse.setJenis('Main Course');
 MainCourse.setKalori(112);
-MainCourse.setSatuan('porsi');
 MainCourse.setHarga(5000);
 
 let Dessert = new MakananProtected();
 Dessert.setNama('Agar');
 Dessert.setJenis('Dessert');
 Dessert.setKalori(25);
-Dessert.setSatuan('porsi');
 Dessert.setHarga(10000);
 
 let Appetizer = new MakananProtected();
 Appetizer.setNama('Serabi');
 Appetizer.setJenis('Appetizer');
 Appetizer.setKalori(245);
-Appetizer.setSatuan('porsi');
 Appetizer.setHarga(7000);
 
 
@@ -221,7 +219,7 @@ console.info(MainCourse.getJenis());
 console.info(MainCourse.getNama());
 console.info(MainCourse.getKalori());
 console.info(MainCourse.getHarga());
-console.info(MainCourse.getSatuan());
+console.info(MakananProtected.getSatuan());
 console.info(`------------------------`);
 console.info(MainCourse.getSemua());
 
@@ -234,7 +232,7 @@ console.info(Dessert.getJenis());
 console.info(Dessert.getNama());
 console.info(Dessert.getKalori());
 console.info(Dessert.getHarga());
-console.info(Dessert.getSatuan());
+console.info(MakananProtected.getSatuan());
 console.info(`------------------------`);
 console.info(Dessert.getSemua());
 
@@ -247,7 +245,7 @@ console.info(Appetizer.getJenis());
 console.info(Appetizer.getNama());
 console.info(Appetizer.getKalori());
 console.info(Appetizer.getHarga());
-console.info(Appetizer.getSatuan());
+console.info(MakananProtected.getSatuan());
 console.info(`------------------------`);
 console.info(Appetizer.getSemua());
 

@@ -3,14 +3,14 @@ class MakananConstructorPrivate {
     private jenis: string = ``;
     private kalori: number = 0;
     private harga: number = 0;
-    private satuan: string = ``;
+    private static satuan: string = ``;
 
     constructor(c_nama: string, c_jenis: string, c_kalori: number, c_harga:number, c_satuan: string) {
         this.nama = c_nama;
         this.jenis = c_jenis;
         this.kalori = c_kalori;
         this.harga = c_harga;
-        this.satuan = c_satuan;
+        MakananConstructorPrivate.satuan = c_satuan;
     }
     
     getJenis(): string {
@@ -99,8 +99,8 @@ class MakananConstructorPrivate {
         return `Harga makanan ini Rp.${rupiah},-`;
     }
 
-    getSatuan(): string {
-        return `Satuan makanan ini ${this.satuan}`;
+    static getSatuan(): string {
+        return `Satuan makanan ini ${MakananConstructorPrivate.satuan}`;
     }
 
     getSemua(): string {
@@ -174,16 +174,17 @@ class MakananConstructorPrivate {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${MakananConstructorPrivate.satuan}`;
     }
 
 }
 
 
-let MakananConstructorPrivateBaru1 = new MakananConstructorPrivate('Nasi', 'Main Course', 112, 5000, 'porsi');
+let MakananConstructorPrivateBaru1 = new MakananConstructorPrivate('Nasi', 'Main Course', 112, 5000, '');
 
-let MakananConstructorPrivateBaru2 = new MakananConstructorPrivate('Agar', 'Dessert', 25, 10000, 'porsi');
+let MakananConstructorPrivateBaru2 = new MakananConstructorPrivate('Agar', 'Dessert', 25, 10000, '');
 
+// insert static satuan : terakhir saja
 let MakananConstructorPrivateBaru3 = new MakananConstructorPrivate('Serabi', 'Appetizer', 245, 7000, 'porsi');
 
 
@@ -194,7 +195,7 @@ console.info(MakananConstructorPrivateBaru1.getJenis());
 console.info(MakananConstructorPrivateBaru1.getNama());
 console.info(MakananConstructorPrivateBaru1.getKalori());
 console.info(MakananConstructorPrivateBaru1.getHarga());
-console.info(MakananConstructorPrivateBaru1.getSatuan());
+console.info(MakananConstructorPrivate.getSatuan());
 console.info(`------------------------`);
 console.info(MakananConstructorPrivateBaru1.getSemua());
 
@@ -207,7 +208,7 @@ console.info(MakananConstructorPrivateBaru2.getJenis());
 console.info(MakananConstructorPrivateBaru2.getNama());
 console.info(MakananConstructorPrivateBaru2.getKalori());
 console.info(MakananConstructorPrivateBaru2.getHarga());
-console.info(MakananConstructorPrivateBaru2.getSatuan());
+console.info(MakananConstructorPrivate.getSatuan());
 console.info(`------------------------`);
 console.info(MakananConstructorPrivateBaru2.getSemua());
 
@@ -220,7 +221,7 @@ console.info(MakananConstructorPrivateBaru3.getJenis());
 console.info(MakananConstructorPrivateBaru3.getNama());
 console.info(MakananConstructorPrivateBaru3.getKalori());
 console.info(MakananConstructorPrivateBaru3.getHarga());
-console.info(MakananConstructorPrivateBaru3.getSatuan());
+console.info(MakananConstructorPrivate.getSatuan());
 console.info(`------------------------`);
 console.info(MakananConstructorPrivateBaru3.getSemua());
 

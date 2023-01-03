@@ -3,7 +3,7 @@ class Makanan {
     jenis: string = ``;
     kalori: number = 0;
     harga: number = 0;
-    satuan: string = ``;
+    static satuan: string = ``;
     
     getJenis(): string {
         return `Jenis makanan ini ${this.jenis}`;
@@ -91,8 +91,8 @@ class Makanan {
         return `Harga makanan ini Rp.${rupiah},-`;
     }
 
-    getSatuan(): string {
-        return `Satuan makanan ini ${this.satuan}`;
+    static getSatuan(): string {
+        return `Satuan makanan ini ${Makanan.satuan}`;
     }
 
     getSemua(): string {
@@ -166,31 +166,29 @@ class Makanan {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${Makanan.satuan}`;
     }
     
 }
 
+Makanan.satuan = 'porsi';
 
 let MakananBaru1 = new Makanan();
 MakananBaru1.nama = 'Nasi';
 MakananBaru1.jenis = 'Main Course';
 MakananBaru1.kalori = 112;
-MakananBaru1.satuan = 'porsi';
 MakananBaru1.harga = 5000;
 
 let MakananBaru2 = new Makanan();
 MakananBaru2.nama = 'Agar';
 MakananBaru2.jenis = 'Dessert';
 MakananBaru2.kalori = 25;
-MakananBaru2.satuan = 'porsi'
 MakananBaru2.harga = 10000;
 
 let MakananBaru3 = new Makanan();
 MakananBaru3.nama = 'Serabi';
 MakananBaru3.jenis = 'Appetizer';
 MakananBaru3.kalori = 245;
-MakananBaru3.satuan = 'porsi'
 MakananBaru3.harga = 7000;
 
 console.info(`========`);
@@ -200,7 +198,7 @@ console.info(MakananBaru1.getJenis());
 console.info(MakananBaru1.getNama());
 console.info(MakananBaru1.getKalori());
 console.info(MakananBaru1.getHarga());
-console.info(MakananBaru1.getSatuan());
+console.info(Makanan.getSatuan());
 console.info(`------------------------`);
 console.info(MakananBaru1.getSemua());
 
@@ -213,7 +211,7 @@ console.info(MakananBaru2.getJenis());
 console.info(MakananBaru2.getNama());
 console.info(MakananBaru2.getKalori());
 console.info(MakananBaru2.getHarga());
-console.info(MakananBaru2.getSatuan());
+console.info(Makanan.getSatuan());
 console.info(`------------------------`);
 console.info(MakananBaru2.getSemua());
 
@@ -226,6 +224,6 @@ console.info(MakananBaru3.getJenis());
 console.info(MakananBaru3.getNama());
 console.info(MakananBaru3.getKalori());
 console.info(MakananBaru3.getHarga());
-console.info(MakananBaru3.getSatuan());
+console.info(Makanan.getSatuan());
 console.info(`------------------------`);
 console.info(MakananBaru3.getSemua());

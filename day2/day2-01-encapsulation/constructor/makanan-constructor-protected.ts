@@ -3,14 +3,14 @@ class MakananConstructorProtected {
     protected jenis: string = ``;
     protected kalori: number = 0;
     protected harga: number = 0;
-    protected satuan: string = ``;
+    protected static satuan: string = ``;
 
     constructor(c_nama: string, c_jenis: string, c_kalori: number, c_harga:number, c_satuan: string) {
         this.nama = c_nama;
         this.jenis = c_jenis;
         this.kalori = c_kalori;
         this.harga = c_harga;
-        this.satuan = c_satuan;
+        MakananConstructorProtected.satuan = c_satuan;
     }
     
     getJenis(): string {
@@ -99,8 +99,8 @@ class MakananConstructorProtected {
         return `Harga makanan ini Rp.${rupiah},-`;
     }
 
-    getSatuan(): string {
-        return `Satuan makanan ini ${this.satuan}`;
+    static getSatuan(): string {
+        return `Satuan makanan ini ${MakananConstructorProtected.satuan}`;
     }
 
     getSemua(): string {
@@ -174,16 +174,17 @@ class MakananConstructorProtected {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${MakananConstructorProtected.satuan}`;
     }
 
 }
 
 
-let MakananConstructorProtectedBaru1 = new MakananConstructorProtected('Nasi', 'Main Course', 112, 5000, 'porsi');
+let MakananConstructorProtectedBaru1 = new MakananConstructorProtected('Nasi', 'Main Course', 112, 5000, '');
 
-let MakananConstructorProtectedBaru2 = new MakananConstructorProtected('Agar', 'Dessert', 25, 10000, 'porsi');
+let MakananConstructorProtectedBaru2 = new MakananConstructorProtected('Agar', 'Dessert', 25, 10000, '');
 
+// insert static satuan : terakhir saja
 let MakananConstructorProtectedBaru3 = new MakananConstructorProtected('Serabi', 'Appetizer', 245, 7000, 'porsi');
 
 
@@ -194,7 +195,7 @@ console.info(MakananConstructorProtectedBaru1.getJenis());
 console.info(MakananConstructorProtectedBaru1.getNama());
 console.info(MakananConstructorProtectedBaru1.getKalori());
 console.info(MakananConstructorProtectedBaru1.getHarga());
-console.info(MakananConstructorProtectedBaru1.getSatuan());
+console.info(MakananConstructorProtected.getSatuan());
 console.info(`------------------------`);
 console.info(MakananConstructorProtectedBaru1.getSemua());
 
@@ -207,7 +208,7 @@ console.info(MakananConstructorProtectedBaru2.getJenis());
 console.info(MakananConstructorProtectedBaru2.getNama());
 console.info(MakananConstructorProtectedBaru2.getKalori());
 console.info(MakananConstructorProtectedBaru2.getHarga());
-console.info(MakananConstructorProtectedBaru2.getSatuan());
+console.info(MakananConstructorProtected.getSatuan());
 console.info(`------------------------`);
 console.info(MakananConstructorProtectedBaru2.getSemua());
 
@@ -220,7 +221,7 @@ console.info(MakananConstructorProtectedBaru3.getJenis());
 console.info(MakananConstructorProtectedBaru3.getNama());
 console.info(MakananConstructorProtectedBaru3.getKalori());
 console.info(MakananConstructorProtectedBaru3.getHarga());
-console.info(MakananConstructorProtectedBaru3.getSatuan());
+console.info(MakananConstructorProtected.getSatuan());
 console.info(`------------------------`);
 console.info(MakananConstructorProtectedBaru3.getSemua());
 
