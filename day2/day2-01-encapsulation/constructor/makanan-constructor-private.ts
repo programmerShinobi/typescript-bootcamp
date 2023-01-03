@@ -1,4 +1,4 @@
-class MakananConstractorPrivate {
+class MakananConstructorPrivate {
     private nama: string = ``;
     private jenis: string = ``;
     private kalori: number = 0;
@@ -180,46 +180,49 @@ class MakananConstractorPrivate {
 }
 
 
-let MakananConstractorPrivateBaru1 = new MakananConstractorPrivate('Nasi', 'Main Course', 112, 5000, 'porsi');
+let MakananConstructorPrivateBaru1 = new MakananConstructorPrivate('Nasi', 'Main Course', 112, 5000, 'porsi');
 
-let MakananConstractorPrivateBaru2 = new MakananConstractorPrivate('Agar', 'Dessert', 25, 10000, 'porsi');
+let MakananConstructorPrivateBaru2 = new MakananConstructorPrivate('Agar', 'Dessert', 25, 10000, 'porsi');
 
-let MakananConstractorPrivateBaru3 = new MakananConstractorPrivate('Serabi', 'Appetizer', 245, 7000, 'porsi');
+let MakananConstructorPrivateBaru3 = new MakananConstructorPrivate('Serabi', 'Appetizer', 245, 7000, 'porsi');
 
 
 console.info(`========`);
 console.info(`Object 1`);
 console.info(`========`);
-console.info(MakananConstractorPrivateBaru1.getJenis());
-console.info(MakananConstractorPrivateBaru1.getNama());
-console.info(MakananConstractorPrivateBaru1.getKalori());
-console.info(MakananConstractorPrivateBaru1.getHarga());
-console.info(MakananConstractorPrivateBaru1.getSatuan());
-console.info(MakananConstractorPrivateBaru1.getSemua());
+console.info(MakananConstructorPrivateBaru1.getJenis());
+console.info(MakananConstructorPrivateBaru1.getNama());
+console.info(MakananConstructorPrivateBaru1.getKalori());
+console.info(MakananConstructorPrivateBaru1.getHarga());
+console.info(MakananConstructorPrivateBaru1.getSatuan());
+console.info(`------------------------`);
+console.info(MakananConstructorPrivateBaru1.getSemua());
 
 console.info(`\n`);
 
 console.info(`========`);
 console.info(`Object 2`);
 console.info(`========`);
-console.info(MakananConstractorPrivateBaru2.getJenis());
-console.info(MakananConstractorPrivateBaru2.getNama());
-console.info(MakananConstractorPrivateBaru2.getKalori());
-console.info(MakananConstractorPrivateBaru2.getHarga());
-console.info(MakananConstractorPrivateBaru2.getSatuan());
-console.info(MakananConstractorPrivateBaru2.getSemua());
+console.info(MakananConstructorPrivateBaru2.getJenis());
+console.info(MakananConstructorPrivateBaru2.getNama());
+console.info(MakananConstructorPrivateBaru2.getKalori());
+console.info(MakananConstructorPrivateBaru2.getHarga());
+console.info(MakananConstructorPrivateBaru2.getSatuan());
+console.info(`------------------------`);
+console.info(MakananConstructorPrivateBaru2.getSemua());
 
 console.info(`\n`);
 
 console.info(`========`);
 console.info(`Object 3`);
 console.info(`========`);
-console.info(MakananConstractorPrivateBaru3.getJenis());
-console.info(MakananConstractorPrivateBaru3.getNama());
-console.info(MakananConstractorPrivateBaru3.getKalori());
-console.info(MakananConstractorPrivateBaru3.getHarga());
-console.info(MakananConstractorPrivateBaru3.getSatuan());
-console.info(MakananConstractorPrivateBaru3.getSemua());
+console.info(MakananConstructorPrivateBaru3.getJenis());
+console.info(MakananConstructorPrivateBaru3.getNama());
+console.info(MakananConstructorPrivateBaru3.getKalori());
+console.info(MakananConstructorPrivateBaru3.getHarga());
+console.info(MakananConstructorPrivateBaru3.getSatuan());
+console.info(`------------------------`);
+console.info(MakananConstructorPrivateBaru3.getSemua());
 
 console.info(`\n`);
 

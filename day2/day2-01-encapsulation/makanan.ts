@@ -201,6 +201,7 @@ console.info(MakananBaru1.getNama());
 console.info(MakananBaru1.getKalori());
 console.info(MakananBaru1.getHarga());
 console.info(MakananBaru1.getSatuan());
+console.info(`------------------------`);
 console.info(MakananBaru1.getSemua());
 
 console.info(`\n`);
@@ -213,6 +214,7 @@ console.info(MakananBaru2.getNama());
 console.info(MakananBaru2.getKalori());
 console.info(MakananBaru2.getHarga());
 console.info(MakananBaru2.getSatuan());
+console.info(`------------------------`);
 console.info(MakananBaru2.getSemua());
 
 console.info(`\n`);
@@ -225,4 +227,5 @@ console.info(MakananBaru3.getNama());
 console.info(MakananBaru3.getKalori());
 console.info(MakananBaru3.getHarga());
 console.info(MakananBaru3.getSatuan());
+console.info(`------------------------`);
 console.info(MakananBaru3.getSemua());

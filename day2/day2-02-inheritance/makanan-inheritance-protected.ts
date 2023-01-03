@@ -239,6 +239,7 @@ console.info(MainCourseInPro.getKalori());
 console.info(MainCourseInPro.getHarga());
 console.info(MainCourseInPro.getSatuan());
 console.info(MainCourseInPro.getAsalDaerah());
+console.info(`------------------------------`);
 console.info(MainCourseInPro.getSemua());
 
 console.info(`\n`);
@@ -252,6 +253,7 @@ console.info(DessertInPro.getKalori());
 console.info(DessertInPro.getHarga());
 console.info(DessertInPro.getSatuan());
 console.info(DessertInPro.getAsalDaerah());
+console.info(`--------------------------------`);
 console.info(DessertInPro.getSemua());
 
 console.info(`\n`);
@@ -265,6 +267,7 @@ console.info(AppetizerInPro.getKalori());
 console.info(AppetizerInPro.getHarga());
 console.info(AppetizerInPro.getSatuan());
 console.info(AppetizerInPro.getAsalDaerah());
+console.info(`-----------------------------`);
 console.info(AppetizerInPro.getSemua());
 
 console.info(`\n`);

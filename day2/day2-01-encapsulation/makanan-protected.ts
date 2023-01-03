@@ -222,6 +222,7 @@ console.info(MainCourse.getNama());
 console.info(MainCourse.getKalori());
 console.info(MainCourse.getHarga());
 console.info(MainCourse.getSatuan());
+console.info(`------------------------`);
 console.info(MainCourse.getSemua());
 
 console.info(`\n`);
@@ -234,6 +235,7 @@ console.info(Dessert.getNama());
 console.info(Dessert.getKalori());
 console.info(Dessert.getHarga());
 console.info(Dessert.getSatuan());
+console.info(`------------------------`);
 console.info(Dessert.getSemua());
 
 console.info(`\n`);
@@ -246,6 +248,7 @@ console.info(Appetizer.getNama());
 console.info(Appetizer.getKalori());
 console.info(Appetizer.getHarga());
 console.info(Appetizer.getSatuan());
+console.info(`------------------------`);
 console.info(Appetizer.getSemua());
 
 console.info(`\n`);

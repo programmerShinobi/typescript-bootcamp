@@ -213,6 +213,7 @@ console.info(MakananInheritanceAsalDaerahBaru1.getKalori());
 console.info(MakananInheritanceAsalDaerahBaru1.getHarga());
 console.info(MakananInheritanceAsalDaerahBaru1.getSatuan());
 console.info(MakananInheritanceAsalDaerahBaru1.getAsalDaerah());
+console.info(`------------------------------`);
 console.info(MakananInheritanceAsalDaerahBaru1.getSemua());
 
 console.info(`\n`);
@@ -226,6 +227,7 @@ console.info(MakananInheritanceAsalDaerahBaru2.getKalori());
 console.info(MakananInheritanceAsalDaerahBaru2.getHarga());
 console.info(MakananInheritanceAsalDaerahBaru2.getSatuan());
 console.info(MakananInheritanceAsalDaerahBaru2.getAsalDaerah());
+console.info(`--------------------------------`);
 console.info(MakananInheritanceAsalDaerahBaru2.getSemua());
 
 console.info(`\n`);
@@ -239,4 +241,5 @@ console.info(MakananInheritanceAsalDaerahBaru3.getKalori());
 console.info(MakananInheritanceAsalDaerahBaru3.getHarga());
 console.info(MakananInheritanceAsalDaerahBaru3.getSatuan());
 console.info(MakananInheritanceAsalDaerahBaru3.getAsalDaerah());
+console.info(`-----------------------------`);
 console.info(MakananInheritanceAsalDaerahBaru3.getSemua());
