@@ -1,9 +1,9 @@
-class MakananPrivate {
-    private nama: string = ``;
-    private jenis: string = ``;
-    private kalori: number = 0;
-    private harga: number = 0;
-    private satuan: string = ``;
+class MakananInPro {
+    protected nama: string = ``;
+    protected jenis: string = ``;
+    protected kalori: number = 0;
+    protected harga: number = 0;
+    protected satuan: string = ``;
     
     getJenis(): string {
         return `Jenis makanan ini ${this.jenis}`;
@@ -95,6 +95,16 @@ class MakananPrivate {
         return `Satuan makanan ini ${this.satuan}`;
     }
 
+}
+
+
+class MakananInProAsalDaerahProtected extends MakananInPro {
+    protected asalDaerah: string = ``;
+
+    getAsalDaerah(): string {
+        return `Makanan ini asal daerah ${this.asalDaerah}`
+    }
+
     getSemua(): string {
         let angka = this.harga;
         /**
@@ -166,7 +176,7 @@ class MakananPrivate {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
     }
 
     setNama(nama: string) {
@@ -189,64 +199,72 @@ class MakananPrivate {
         this.harga = harga;
     }
 
+    setAsalDaerah(asalDaerah: string) {
+        this.asalDaerah = asalDaerah;
+    }
+
 }
 
+let MainCourseInPro = new MakananInProAsalDaerahProtected();
+MainCourseInPro.setNama('Nasi Padang');
+MainCourseInPro.setJenis('Main Course');
+MainCourseInPro.setKalori(112);
+MainCourseInPro.setSatuan('porsi');
+MainCourseInPro.setHarga(7000);
+MainCourseInPro.setAsalDaerah('Padang');
 
-let MainCourses = new MakananPrivate();
-MainCourses.setNama('Nasi');
-MainCourses.setJenis('Main Course');
-MainCourses.setKalori(112);
-MainCourses.setSatuan('porsi');
-MainCourses.setHarga(5000);
+let DessertInPro = new MakananInProAsalDaerahProtected();
+DessertInPro.setNama('Pallu Butung');
+DessertInPro.setJenis('Dessert');
+DessertInPro.setKalori(301);
+DessertInPro.setSatuan('porsi');
+DessertInPro.setHarga(15000);
+DessertInPro.setAsalDaerah('Makassar');
 
-let Desserts = new MakananPrivate();
-Desserts.setNama('Agar');
-Desserts.setJenis('Dessert');
-Desserts.setKalori(25);
-Desserts.setSatuan('porsi');
-Desserts.setHarga(10000);
-
-let Appetizers = new MakananPrivate();
-Appetizers.setNama('Serabi');
-Appetizers.setJenis('Appetizer');
-Appetizers.setKalori(245);
-Appetizers.setSatuan('porsi');
-Appetizers.setHarga(7000);
+let AppetizerInPro = new MakananInProAsalDaerahProtected();
+AppetizerInPro.setNama('Asinan Bogor');
+AppetizerInPro.setJenis('Appetizer');
+AppetizerInPro.setKalori(130);
+AppetizerInPro.setSatuan('porsi');
+AppetizerInPro.setHarga(5000);
+AppetizerInPro.setAsalDaerah('Bogor');
 
 
 console.info(`========`);
 console.info(`Object 1`);
 console.info(`========`);
-console.info(MainCourses.getJenis());
-console.info(MainCourses.getNama());
-console.info(MainCourses.getKalori());
-console.info(MainCourses.getHarga());
-console.info(MainCourses.getSatuan());
-console.info(MainCourses.getSemua());
+console.info(MainCourseInPro.getJenis());
+console.info(MainCourseInPro.getNama());
+console.info(MainCourseInPro.getKalori());
+console.info(MainCourseInPro.getHarga());
+console.info(MainCourseInPro.getSatuan());
+console.info(MainCourseInPro.getAsalDaerah());
+console.info(MainCourseInPro.getSemua());
 
 console.info(`\n`);
 
 console.info(`========`);
 console.info(`Object 2`);
 console.info(`========`);
-console.info(Desserts.getJenis());
-console.info(Desserts.getNama());
-console.info(Desserts.getKalori());
-console.info(Desserts.getHarga());
-console.info(Desserts.getSatuan());
-console.info(Desserts.getSemua());
+console.info(DessertInPro.getJenis());
+console.info(DessertInPro.getNama());
+console.info(DessertInPro.getKalori());
+console.info(DessertInPro.getHarga());
+console.info(DessertInPro.getSatuan());
+console.info(DessertInPro.getAsalDaerah());
+console.info(DessertInPro.getSemua());
 
 console.info(`\n`);
 
 console.info(`========`);
 console.info(`Object 3`);
 console.info(`========`);
-console.info(Appetizers.getJenis());
-console.info(Appetizers.getNama());
-console.info(Appetizers.getKalori());
-console.info(Appetizers.getHarga());
-console.info(Appetizers.getSatuan());
-console.info(Appetizers.getSemua());
+console.info(AppetizerInPro.getJenis());
+console.info(AppetizerInPro.getNama());
+console.info(AppetizerInPro.getKalori());
+console.info(AppetizerInPro.getHarga());
+console.info(AppetizerInPro.getSatuan());
+console.info(AppetizerInPro.getAsalDaerah());
+console.info(AppetizerInPro.getSemua());
 
 console.info(`\n`);
-

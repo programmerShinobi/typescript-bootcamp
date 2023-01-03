@@ -189,7 +189,6 @@ class MakananProtected {
         this.harga = harga;
     }
 
-
 }
 
 

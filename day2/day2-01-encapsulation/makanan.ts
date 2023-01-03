@@ -168,6 +168,7 @@ class Makanan {
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
         return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}`;
     }
+    
 }
 
 

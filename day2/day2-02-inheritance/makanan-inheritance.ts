@@ -1,4 +1,4 @@
-class Makanan {
+class MakananInheritance {
     nama: string = ``;
     jenis: string = ``;
     kalori: number = 0;
@@ -97,7 +97,7 @@ class Makanan {
 }
 
 
-class MakananAsalDaerah extends Makanan {
+class MakananInheritanceAsalDaerah extends MakananInheritance {
     asalDaerah: string = ``;
     getAsalDaerah(): string {
         return `Makanan ini asal daerah ${this.asalDaerah}`
@@ -180,63 +180,63 @@ class MakananAsalDaerah extends Makanan {
 }
 
 
-let MakananAsalDaerahBaru1 = new MakananAsalDaerah();
-MakananAsalDaerahBaru1.nama = 'Nasi Padang';
-MakananAsalDaerahBaru1.jenis = 'Main Course';
-MakananAsalDaerahBaru1.kalori = 112;
-MakananAsalDaerahBaru1.satuan = 'porsi';
-MakananAsalDaerahBaru1.harga = 7000;
-MakananAsalDaerahBaru1.asalDaerah = 'Padang';
+let MakananInheritanceAsalDaerahBaru1 = new MakananInheritanceAsalDaerah();
+MakananInheritanceAsalDaerahBaru1.nama = 'Nasi Padang';
+MakananInheritanceAsalDaerahBaru1.jenis = 'Main Course';
+MakananInheritanceAsalDaerahBaru1.kalori = 112;
+MakananInheritanceAsalDaerahBaru1.satuan = 'porsi';
+MakananInheritanceAsalDaerahBaru1.harga = 7000;
+MakananInheritanceAsalDaerahBaru1.asalDaerah = 'Padang';
 
-let MakananAsalDaerahBaru2 = new MakananAsalDaerah();
-MakananAsalDaerahBaru2.nama = 'Pallu Butung';
-MakananAsalDaerahBaru2.jenis = 'Dessert';
-MakananAsalDaerahBaru2.kalori = 301;
-MakananAsalDaerahBaru2.satuan = 'porsi'
-MakananAsalDaerahBaru2.harga = 15000;
-MakananAsalDaerahBaru2.asalDaerah = 'Makassar';
+let MakananInheritanceAsalDaerahBaru2 = new MakananInheritanceAsalDaerah();
+MakananInheritanceAsalDaerahBaru2.nama = 'Pallu Butung';
+MakananInheritanceAsalDaerahBaru2.jenis = 'Dessert';
+MakananInheritanceAsalDaerahBaru2.kalori = 301;
+MakananInheritanceAsalDaerahBaru2.satuan = 'porsi'
+MakananInheritanceAsalDaerahBaru2.harga = 15000;
+MakananInheritanceAsalDaerahBaru2.asalDaerah = 'Makassar';
 
-let MakananAsalDaerahBaru3 = new MakananAsalDaerah();
-MakananAsalDaerahBaru3.nama = 'Asinan Bogor';
-MakananAsalDaerahBaru3.jenis = 'Appetizer';
-MakananAsalDaerahBaru3.kalori = 130;
-MakananAsalDaerahBaru3.satuan = 'porsi'
-MakananAsalDaerahBaru3.harga = 5000;
-MakananAsalDaerahBaru3.asalDaerah = 'Bogor';
+let MakananInheritanceAsalDaerahBaru3 = new MakananInheritanceAsalDaerah();
+MakananInheritanceAsalDaerahBaru3.nama = 'Asinan Bogor';
+MakananInheritanceAsalDaerahBaru3.jenis = 'Appetizer';
+MakananInheritanceAsalDaerahBaru3.kalori = 130;
+MakananInheritanceAsalDaerahBaru3.satuan = 'porsi'
+MakananInheritanceAsalDaerahBaru3.harga = 5000;
+MakananInheritanceAsalDaerahBaru3.asalDaerah = 'Bogor';
 
 console.info(`========`);
 console.info(`Object 1`);
 console.info(`========`);
-console.info(MakananAsalDaerahBaru1.getJenis());
-console.info(MakananAsalDaerahBaru1.getNama());
-console.info(MakananAsalDaerahBaru1.getKalori());
-console.info(MakananAsalDaerahBaru1.getHarga());
-console.info(MakananAsalDaerahBaru1.getSatuan());
-console.info(MakananAsalDaerahBaru1.getAsalDaerah());
-console.info(MakananAsalDaerahBaru1.getSemua());
+console.info(MakananInheritanceAsalDaerahBaru1.getJenis());
+console.info(MakananInheritanceAsalDaerahBaru1.getNama());
+console.info(MakananInheritanceAsalDaerahBaru1.getKalori());
+console.info(MakananInheritanceAsalDaerahBaru1.getHarga());
+console.info(MakananInheritanceAsalDaerahBaru1.getSatuan());
+console.info(MakananInheritanceAsalDaerahBaru1.getAsalDaerah());
+console.info(MakananInheritanceAsalDaerahBaru1.getSemua());
 
 console.info(`\n`);
 
 console.info(`========`);
 console.info(`Object 2`);
 console.info(`========`);
-console.info(MakananAsalDaerahBaru2.getJenis());
-console.info(MakananAsalDaerahBaru2.getNama());
-console.info(MakananAsalDaerahBaru2.getKalori());
-console.info(MakananAsalDaerahBaru2.getHarga());
-console.info(MakananAsalDaerahBaru2.getSatuan());
-console.info(MakananAsalDaerahBaru2.getAsalDaerah());
-console.info(MakananAsalDaerahBaru2.getSemua());
+console.info(MakananInheritanceAsalDaerahBaru2.getJenis());
+console.info(MakananInheritanceAsalDaerahBaru2.getNama());
+console.info(MakananInheritanceAsalDaerahBaru2.getKalori());
+console.info(MakananInheritanceAsalDaerahBaru2.getHarga());
+console.info(MakananInheritanceAsalDaerahBaru2.getSatuan());
+console.info(MakananInheritanceAsalDaerahBaru2.getAsalDaerah());
+console.info(MakananInheritanceAsalDaerahBaru2.getSemua());
 
 console.info(`\n`);
 
 console.info(`========`);
 console.info(`Object 3`);
 console.info(`========`);
-console.info(MakananAsalDaerahBaru3.getJenis());
-console.info(MakananAsalDaerahBaru3.getNama());
-console.info(MakananAsalDaerahBaru3.getKalori());
-console.info(MakananAsalDaerahBaru3.getHarga());
-console.info(MakananAsalDaerahBaru3.getSatuan());
-console.info(MakananAsalDaerahBaru3.getAsalDaerah());
-console.info(MakananAsalDaerahBaru3.getSemua());
+console.info(MakananInheritanceAsalDaerahBaru3.getJenis());
+console.info(MakananInheritanceAsalDaerahBaru3.getNama());
+console.info(MakananInheritanceAsalDaerahBaru3.getKalori());
+console.info(MakananInheritanceAsalDaerahBaru3.getHarga());
+console.info(MakananInheritanceAsalDaerahBaru3.getSatuan());
+console.info(MakananInheritanceAsalDaerahBaru3.getAsalDaerah());
+console.info(MakananInheritanceAsalDaerahBaru3.getSemua());

@@ -18,7 +18,6 @@ class Cars {
     setBrand(brand: string) {
         this.brand = brand;
     }
-
     
     setSpeed(speed: number) {
         this.speed =speed
