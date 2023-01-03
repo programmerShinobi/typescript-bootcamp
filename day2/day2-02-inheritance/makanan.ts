@@ -1,4 +1,4 @@
-class MakananInheritance {
+class Makanan {
     nama: string = ``;
     jenis: string = ``;
     kalori: number = 0;
@@ -97,7 +97,7 @@ class MakananInheritance {
 }
 
 
-class MakananAsalDaerah extends MakananInheritance {
+class MakananAsalDaerah extends Makanan {
     asalDaerah: string = ``;
     getAsalDaerah(): string {
         return `Makanan ini asal daerah ${this.asalDaerah}`
@@ -174,7 +174,7 @@ class MakananAsalDaerah extends MakananInheritance {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan} berasal dari daerah ${this.asalDaerah}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
     }
 
 }
