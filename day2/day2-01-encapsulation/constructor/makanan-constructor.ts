@@ -100,7 +100,7 @@ class MakananConstructor {
     }
 
     static getSatuan(): string {
-        return `Satuan makanan ini ${MakananConstructor.satuan}`;
+        return `Satuan makanan ini ${this.satuan}`;
     }
 
     getSemua(): string {

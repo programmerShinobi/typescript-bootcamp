@@ -92,7 +92,7 @@ class MakananProtected {
     }
 
     static getSatuan(): string {
-        return `Satuan makanan ini ${MakananProtected.satuan}`;
+        return `Satuan makanan ini ${this.satuan}`;
     }
 
     getSemua(): string {

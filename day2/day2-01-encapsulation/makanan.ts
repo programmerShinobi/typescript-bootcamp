@@ -92,7 +92,7 @@ class Makanan {
     }
 
     static getSatuan(): string {
-        return `Satuan makanan ini ${Makanan.satuan}`;
+        return `Satuan makanan ini ${this.satuan}`;
     }
 
     getSemua(): string {

@@ -3,7 +3,7 @@ class MakananInheritance {
     jenis: string = ``;
     kalori: number = 0;
     harga: number = 0;
-    satuan: string = ``;
+    static satuan: string = ``;
     
     getJenis(): string {
         return `Jenis makanan ini ${this.jenis}`;
@@ -91,7 +91,7 @@ class MakananInheritance {
         return `Harga makanan ini Rp.${rupiah},-`;
     }
 
-    getSatuan(): string {
+    static getSatuan(): string {
         return `Satuan makanan ini ${this.satuan}`;
     }
 }
@@ -174,17 +174,17 @@ class MakananInheritanceAsalDaerah extends MakananInheritance {
          * 
          */
         rupiah = split[1] != undefined ? rupiah + ',' + split[1] : rupiah;
-        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${this.satuan}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
+        return `Jenis makanan ${this.jenis} salah satunya, yaitu ${this.nama} memiliki tingkat kalori ${this.kalori} dengan harga Rp.${rupiah},- /${MakananInheritanceAsalDaerah.satuan}.\nMakanan tersebut berasal dari daerah ${this.asalDaerah}`;
     }
 
 }
 
+MakananInheritanceAsalDaerah.satuan = 'porsi';
 
 let MakananInheritanceAsalDaerahBaru1 = new MakananInheritanceAsalDaerah();
 MakananInheritanceAsalDaerahBaru1.nama = 'Nasi Padang';
 MakananInheritanceAsalDaerahBaru1.jenis = 'Main Course';
 MakananInheritanceAsalDaerahBaru1.kalori = 112;
-MakananInheritanceAsalDaerahBaru1.satuan = 'porsi';
 MakananInheritanceAsalDaerahBaru1.harga = 7000;
 MakananInheritanceAsalDaerahBaru1.asalDaerah = 'Padang';
 
@@ -192,7 +192,6 @@ let MakananInheritanceAsalDaerahBaru2 = new MakananInheritanceAsalDaerah();
 MakananInheritanceAsalDaerahBaru2.nama = 'Pallu Butung';
 MakananInheritanceAsalDaerahBaru2.jenis = 'Dessert';
 MakananInheritanceAsalDaerahBaru2.kalori = 301;
-MakananInheritanceAsalDaerahBaru2.satuan = 'porsi'
 MakananInheritanceAsalDaerahBaru2.harga = 15000;
 MakananInheritanceAsalDaerahBaru2.asalDaerah = 'Makassar';
 
@@ -200,7 +199,6 @@ let MakananInheritanceAsalDaerahBaru3 = new MakananInheritanceAsalDaerah();
 MakananInheritanceAsalDaerahBaru3.nama = 'Asinan Bogor';
 MakananInheritanceAsalDaerahBaru3.jenis = 'Appetizer';
 MakananInheritanceAsalDaerahBaru3.kalori = 130;
-MakananInheritanceAsalDaerahBaru3.satuan = 'porsi'
 MakananInheritanceAsalDaerahBaru3.harga = 5000;
 MakananInheritanceAsalDaerahBaru3.asalDaerah = 'Bogor';
 
@@ -211,7 +209,7 @@ console.info(MakananInheritanceAsalDaerahBaru1.getJenis());
 console.info(MakananInheritanceAsalDaerahBaru1.getNama());
 console.info(MakananInheritanceAsalDaerahBaru1.getKalori());
 console.info(MakananInheritanceAsalDaerahBaru1.getHarga());
-console.info(MakananInheritanceAsalDaerahBaru1.getSatuan());
+console.info(MakananInheritanceAsalDaerah.getSatuan());
 console.info(MakananInheritanceAsalDaerahBaru1.getAsalDaerah());
 console.info(`------------------------------`);
 console.info(MakananInheritanceAsalDaerahBaru1.getSemua());
@@ -225,7 +223,7 @@ console.info(MakananInheritanceAsalDaerahBaru2.getJenis());
 console.info(MakananInheritanceAsalDaerahBaru2.getNama());
 console.info(MakananInheritanceAsalDaerahBaru2.getKalori());
 console.info(MakananInheritanceAsalDaerahBaru2.getHarga());
-console.info(MakananInheritanceAsalDaerahBaru2.getSatuan());
+console.info(MakananInheritanceAsalDaerah.getSatuan());
 console.info(MakananInheritanceAsalDaerahBaru2.getAsalDaerah());
 console.info(`--------------------------------`);
 console.info(MakananInheritanceAsalDaerahBaru2.getSemua());
@@ -239,7 +237,7 @@ console.info(MakananInheritanceAsalDaerahBaru3.getJenis());
 console.info(MakananInheritanceAsalDaerahBaru3.getNama());
 console.info(MakananInheritanceAsalDaerahBaru3.getKalori());
 console.info(MakananInheritanceAsalDaerahBaru3.getHarga());
-console.info(MakananInheritanceAsalDaerahBaru3.getSatuan());
+console.info(MakananInheritanceAsalDaerah.getSatuan());
 console.info(MakananInheritanceAsalDaerahBaru3.getAsalDaerah());
 console.info(`-----------------------------`);
 console.info(MakananInheritanceAsalDaerahBaru3.getSemua());
