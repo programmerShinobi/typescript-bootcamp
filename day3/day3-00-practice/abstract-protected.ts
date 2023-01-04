@@ -8,8 +8,7 @@ abstract class EmployeeProtected {
     }
     componentStatement(): string{
         return `${this.fullName()} makes ${this.getSalary()} a month`;
-    }
-    
+    }   
 }
 
 class FUllTimeEmployeeProtected extends EmployeeProtected {
