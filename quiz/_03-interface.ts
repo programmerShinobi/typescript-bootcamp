@@ -134,7 +134,7 @@ interface vehicleInterface{
 }
 
 class vehiclePurchase implements vehicleInterface {
-    ArrayProp: any[];
+    protected ArrayProp: any[];
     constructor(arrayProp:any[]) {
         this.ArrayProp = arrayProp 
     }

@@ -1,17 +1,17 @@
 class vehiclePurchase {
-    id: number;
-    noPolice: string;
-    vehicleType: string;
-    year: number;
-    price: number;
-    taxInYear: number;
-    seat: number;
-    transactionDate: Date;
-    rent: number;
-    driver: number;
-    order: number;
-    orderPerKM: number;
-    total: number;
+    protected id: number;
+    protected noPolice: string;
+    protected vehicleType: string;
+    protected year: number;
+    protected price: number;
+    protected taxInYear: number;
+    protected seat: number;
+    protected transactionDate: Date;
+    protected rent: number;
+    protected driver: number;
+    protected order: number;
+    protected orderPerKM: number;
+    private total: number;
     vehicles: vehiclePurchase[] = [];
 
     constructor(
