@@ -1,13 +1,59 @@
 class vehiclePurchase {
+    id: number;
     noPolice: string;
-    purch_vehicleType: string;
-    purch_year: number;
-    purch_price: number;
-    purch_taxInYear: number;
-    purch_seat: number;
-    vehicles: vehiclePurchase[]
+    vehicleType: string;
+    year: number;
+    price: number;
+    taxInYear: number;
+    seat: number;
+    transactionDate: Date;
+    rent: number;
+    driver: number;
+    order: number;
+    orderPerKM: number;
+    total: number;
+    vehicles: vehiclePurchase[] = [];
 
-    GetTotalVehicle(noPolice: string):number {
+    constructor(
+        id: number = 0,
+        noPolice: string = '',
+        vehicleType: string = '',
+        year: number = 0,
+        price: number = 0,
+        taxInYear: number = 0,
+        seat: number = 0,
+        transactionDate: Date = new Date(),
+        rent: number = 0,
+        driver: number = 0,
+        order: number = 0,
+        orderPerKM: number = 0,
+        total: number = 0
+    ) {
+        this.id = id;
+        this.noPolice = noPolice;
+        this.vehicleType = vehicleType;
+        this.year = year;
+        this.price = price;
+        this.taxInYear = taxInYear;
+        this.seat = seat;
+        this.transactionDate = transactionDate;
+        this.rent = rent;
+        this.driver = driver;
+        this.order = order;
+        this.orderPerKM = orderPerKM;
+        this.total = total;
+    }
+
+    // No. 1 : Menampilakn hasil dari fungsi GetTotalVehicle : TotalRow()
+    GetTotalVehicle(idCount: number): object{
+        return {
+            'Interface Method' : 'GetTotalVehicle()',
+            'Return Value' : idCount
+        }
+    }
+
+    // No. 2 : Menampilkan hasil dari fungsi GetTotalVehicle berdasarkan VehicleType : TotalRow(VehicleType)
+    GetTotalVehicleType(vehicleType: string): object {
         // deklarasikan count
         let count = 0;
 
@@ -16,224 +62,90 @@ class vehiclePurchase {
          * yang disimpan dalam array "this.vehicles".
          */
         for (let vehicle of this.vehicles) {
-            if (vehicle.noPolice === noPolice) {
+            if (vehicle.vehicleType === vehicleType) {
                 count++;
             }
         }
-
-        // Mengembalikan nilai dari variabel 'count' 
-        return count;
+        
+        // Mengembalikan nilai dari variabel 'idCount'
+        return {
+            'Interface Method' : `GetTotalVehicle(${vehicleType})`,
+            'Return Value' : count
+        }
     }
 
+    // No. 3 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(VehicleType)
+    GetTotalIncomeVehicle(vehicleType: string): object {
+        // deklarasikan count
+        let count = 0;
+
+        if (vehicleType) {
+            /**
+             * Pengecekan setiap objek dari kelas vehiclePurchase
+             * yang disimpan dalam array "this.vehicles".
+             */
+            for (let vehicle of this.vehicles) {
+                if (vehicle.vehicleType === vehicleType) {
+                    count+=vehicle.total
+                }
+            }
+        } else {
+            /**
+             * Pengecekan setiap objek dari kelas vehiclePurchase
+             * yang disimpan dalam array "this.vehicles".
+             */
+            for (let vehicle of this.vehicles) {
+                count+=vehicle.total
+            }
+        }
+
+        
+        // Mengembalikan nilai dari variabel 'idCount'
+        return {
+            'Interface Method' : `GetTotalIncomeVehicle(${vehicleType})`,
+            'Return Value' : count
+        }
+    }
     
 } 
 
-class income {
-    noPolice: string;
-    income_transactionDate: Date;
-    income_rent: number;
-    income_driver: number;
-    income_order: number;
-    income_orderPerKM: number;
-    income_total: number;
-}
 
-//---------------------------------vehicelPurchase
-let vP1 = new vehiclePurchase();
-vP1.noPolice = 'D 1001 UM';
-vP1.purch_vehicleType = 'SUV';
-vP1.purch_year = 2010;
-vP1.purch_price = 350000000;
-vP1.purch_taxInYear = vP1.purch_price/100;
-vP1.purch_seat = 4;
+// Membuat objek dari kelas vehiclePurchase
+let vP1 = new vehiclePurchase(1, 'D 1001 UM', 'SUV', 2010, 350000000, 350000000/100, 4, new Date(2023, 1,10), 500000, 150000, 0, 0,650000);
+let vP2 = new vehiclePurchase(2, 'D 1002 UM', 'SUV', 2010, 350000000, 350000000/100, 4, new Date(2023, 1,10), 500000, 150000, 0, 0,650000);
+let vP3 = new vehiclePurchase(3, 'D 1003 UM', 'SUV', 2010, 350000000, 350000000/100, 5, new Date(2023, 1,12), 500000, 150000, 0, 0,650000);
+let vP4 = new vehiclePurchase(4, 'D 1004 UM', 'SUV', 2015, 350000000, 350000000/100, 5, new Date(2023, 1,13), 500000, 150000, 0, 0,650000);
+let vP5 = new vehiclePurchase(5, 'D 11 UK', 'TAXI', 2002, 175000000, 175000000/100, 4, new Date(2023, 1,12), 0, 0, 45, 4500,202500);
+let vP6 = new vehiclePurchase(6, 'D 12 UK', 'TAXI', 2015, 225000000, 225000000/100, 4, new Date(2023, 1,13), 0, 0, 75, 4500,337500);
+let vP7 = new vehiclePurchase(7, 'D 13 UK', 'TAXI', 2020, 275000000, 275000000/100, 4, new Date(2023, 1,13), 0, 0, 90, 4500,405000);
+let vP8 = new vehiclePurchase(8, 'ID8089', 'PrivateJet', 2015, 350000000, 350000000/100, 12, new Date(2022, 12,23), 35000000, 15000000, 0, 0,50000000);
+let vP9 = new vehiclePurchase(9, 'ID8099', 'PrivateJet', 2018, 350000000, 350000000/100, 12, new Date(2022, 12,25), 55000000, 25000000, 0, 0,80000000);
 
-let vP2 = new vehiclePurchase();
-vP2.noPolice = 'D 1002 UM';
-vP2.purch_vehicleType = 'SUV';
-vP2.purch_year = 2010;
-vP2.purch_price = 350000000;
-vP2.purch_taxInYear = vP2.purch_price/100;
-vP2.purch_seat = 4;
+// Deklarasi totalVP menjadi object dari class vehiclePurchase
+let totalVP = new vehiclePurchase();
+// Menambahkan objek ke dalam array 'vehicles'
+totalVP.vehicles.push(vP1, vP2, vP3, vP4, vP5, vP6, vP7, vP8, vP9);
 
-let vP3 = new vehiclePurchase();
-vP3.noPolice = 'D 1003 UM';
-vP3.purch_vehicleType = 'SUV';
-vP3.purch_year = 2015;
-vP3.purch_price = 350000000;
-vP3.purch_taxInYear = vP3.purch_price/100;
-vP3.purch_seat = 5;
+// No. 1 : Menampilakn hasil dari fungsi GetTotalVehicle : TotalRow()
+console.info(`\nRow : 1   ----------------------------------------------------`);
+console.info(totalVP.GetTotalVehicle(totalVP.vehicles.length))
 
-let vP4 = new vehiclePurchase();
-vP4.noPolice = 'D 1004 UM';
-vP4.purch_vehicleType = 'SUV';
-vP4.purch_year = 2015;
-vP4.purch_price = 350000000;
-vP4.purch_taxInYear = vP4.purch_price/100;
-vP4.purch_seat = 5;
+// No. 2 : Menampilkan hasil dari fungsi GetTotalVehicle berdasarkan VehicleType : TotalRow(VehicleType)
+console.info(`\nRow : 2   ------------------------------------------------------`);
+console.info(totalVP.GetTotalVehicleType('SUV'));
 
-let vP5 = new vehiclePurchase();
-vP5.noPolice = 'D 11 UK';
-vP5.purch_vehicleType = 'Taxi';
-vP5.purch_year = 2002;
-vP5.purch_price = 175000000;
-vP5.purch_taxInYear = vP4.purch_price/100;
-vP5.purch_seat = 4;
+// No. 3 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(VehicleType)
+console.info(`\nRow : 3   ------------------------------------------------------`);
+console.info(totalVP.GetTotalIncomeVehicle('SUV'));
 
-let vP6 = new vehiclePurchase();
-vP6.noPolice = 'D 12 UK';
-vP6.purch_vehicleType = 'Taxi';
-vP6.purch_year = 2015;
-vP6.purch_price = 225000000;
-vP6.purch_taxInYear = vP6.purch_price/100;
-vP6.purch_seat = 4;
+// No. 4 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(VehicleType)
+console.info(`\nRow : 4   ------------------------------------------------------`);
+console.info(totalVP.GetTotalIncomeVehicle('TAXI'));
 
-let vP7 = new vehiclePurchase();
-vP7.noPolice = 'D 13 UK';
-vP7.purch_vehicleType = 'Taxi';
-vP7.purch_year = 2020;
-vP7.purch_price = 275000000;
-vP7.purch_taxInYear = vP7.purch_price/100;
-vP7.purch_seat = 4;
+// No. 5 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(VehicleType)
+console.info(`\nRow : 5   ------------------------------------------------------`);
+console.info(totalVP.GetTotalIncomeVehicle('PrivateJet'));
 
-let vP8 = new vehiclePurchase();
-vP8.noPolice = 'ID8089';
-vP8.purch_vehicleType = 'PrivasiJet';
-vP8.purch_year = 2015;
-vP8.purch_price =150000000000;
-vP8.purch_taxInYear = vP8.purch_price/100;
-vP8.purch_seat = 12;
-
-let vP9 = new vehiclePurchase();
-vP9.noPolice = 'ID8099';
-vP9.purch_vehicleType = 'PrivasiJet';
-vP9.purch_year = 2018;
-vP9.purch_price =175000000000;
-vP9.purch_taxInYear = vP9.purch_price/100;
-vP9.purch_seat = 15;
-
-
-//---------------------------------income
-let in1 = new income();
-in1.noPolice = vP1.noPolice;
-in1.income_transactionDate = new Date(2023, 1, 10);
-in1.income_rent = 500000;
-in1.income_driver = 150000;
-if (in1.income_rent && in1.income_driver) {
-    in1.income_total = in1.income_rent + in1.income_driver;
-} else if (in1.income_order && in1.income_orderPerKM) {
-    in1.income_total = in1.income_order * in1.income_orderPerKM
-} else {
-    in1.income_total = 0;
-}
-
-let in2 = new income();
-in2.noPolice = vP2.noPolice;
-in2.income_transactionDate = new Date(2023, 1, 10);
-in2.income_rent = 500000;
-in2.income_driver = 150000;
-if (in2.income_rent && in2.income_driver) {
-    in2.income_total = in2.income_rent + in2.income_driver;
-} else if (in2.income_order && in2.income_orderPerKM) {
-    in2.income_total = in2.income_order * in2.income_orderPerKM
-} else {
-    in2.income_total = 0;
-}
-
-let in3 = new income();
-in3.noPolice = vP3.noPolice;
-in3.income_transactionDate = new Date(2023, 1, 12);
-in3.income_rent = 500000;
-in3.income_driver = 150000;
-if (in3.income_rent && in3.income_driver) {
-    in3.income_total = in3.income_rent + in3.income_driver;
-} else if (in3.income_order && in3.income_orderPerKM) {
-    in3.income_total = in3.income_order * in3.income_orderPerKM
-} else {
-    in3.income_total = 0;
-}
-
-let in4 = new income();
-in4.noPolice = vP4.noPolice;
-in4.income_transactionDate = new Date(2023, 1, 13);
-in4.income_rent = 500000;
-in4.income_driver = 150000;
-if (in4.income_rent && in4.income_driver) {
-    in4.income_total = in4.income_rent + in4.income_driver;
-} else if (in4.income_order && in4.income_orderPerKM) {
-    in4.income_total = in4.income_order * in4.income_orderPerKM
-} else {
-    in4.income_total = 0;
-}
-
-let in5 = new income();
-in5.noPolice = vP5.noPolice;
-in5.income_transactionDate = new Date(2023, 1, 12);
-in5.income_order = 45;
-in5.income_orderPerKM = 4500;
-if (in5.income_rent && in5.income_driver) {
-    in5.income_total = in5.income_rent + in5.income_driver;
-} else if (in5.income_order && in5.income_orderPerKM) {
-    in5.income_total = in5.income_order * in5.income_orderPerKM
-} else {
-    in5.income_total = 0;
-}
-
-let in6 = new income();
-in6.noPolice = vP6.noPolice;
-in6.income_transactionDate = new Date(2023, 1, 13);
-in6.income_order = 75;
-in6.income_orderPerKM = 4500;
-if (in6.income_rent && in6.income_driver) {
-    in6.income_total = in6.income_rent + in6.income_driver;
-} else if (in6.income_order && in6.income_orderPerKM) {
-    in6.income_total = in6.income_order * in6.income_orderPerKM
-} else {
-    in6.income_total = 0;
-}
-
-let in7 = new income();
-in7.noPolice = vP7.noPolice;
-in7.income_transactionDate = new Date(2023, 1, 13);
-in7.income_order = 90;
-in7.income_orderPerKM = 4500;
-if (in7.income_rent && in7.income_driver) {
-    in7.income_total = in7.income_rent + in7.income_driver;
-} else if (in7.income_order && in7.income_orderPerKM) {
-    in7.income_total = in7.income_order * in7.income_orderPerKM
-} else {
-    in7.income_total = 0;
-}
-
-let in8 = new income();
-in8.noPolice = vP8.noPolice;
-in8.income_transactionDate = new Date(2022, 12, 23);
-in8.income_rent = 35000000;
-in8.income_driver = 15000000;
-if (in8.income_rent && in8.income_driver) {
-    in8.income_total = in8.income_rent + in8.income_driver;
-} else if (in8.income_order && in8.income_orderPerKM) {
-    in8.income_total = in8.income_order * in8.income_orderPerKM
-} else {
-    in8.income_total = 0;
-}
-
-let in9 = new income();
-in9.noPolice = vP9.noPolice;
-in9.income_transactionDate = new Date(2022, 12, 25);
-in9.income_rent = 55000000;
-in9.income_driver = 25000000;
-if (in9.income_rent && in9.income_driver) {
-    in9.income_total = in9.income_rent + in9.income_driver;
-} else if (in9.income_order && in9.income_orderPerKM) {
-    in9.income_total = in9.income_order * in9.income_orderPerKM
-} else {
-    in9.income_total = 0;
-}
-
-
-
-
-
-
-
-
+// No. 6 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(AllVehicleType)
+console.info(`\nRow : 5   ------------------------------------------------------`);
+console.info(totalVP.GetTotalIncomeVehicle(''));
