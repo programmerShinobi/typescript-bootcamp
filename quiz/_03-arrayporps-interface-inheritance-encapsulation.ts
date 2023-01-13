@@ -1,4 +1,4 @@
-let vechileClass = [
+let vehicleClass = [
     {
         noPolice: 'D 1001 UM',
         purch_vehicleType: 'SUV',
@@ -133,7 +133,7 @@ interface vehicleInterface{
     GetTotalVehicleType(purch_vehicleType: string): object;
 }
 
-class vehiclePurchase implements vehicleInterface {
+class purchase implements vehicleInterface {
     protected ArrayProp: any[];
     constructor(arrayProp:any[]) {
         this.ArrayProp = arrayProp 
@@ -179,7 +179,7 @@ class vehiclePurchase implements vehicleInterface {
     
 } 
 
-class income extends vehiclePurchase {
+class income extends purchase {
     constructor(ArrayProp: any[]) {
         super(ArrayProp)
     
@@ -220,28 +220,31 @@ class income extends vehiclePurchase {
 
 }
 
-let vechiles = new income(vechileClass);
+
+let purchaseVechiles = new purchase(vehicleClass);
 
 console.info(`\nRow : 1   ------------------------------------------------------------`);
-console.info(vechiles.GetTotalVehicle())
+console.info(purchaseVechiles.GetTotalVehicle())
 
 // No. 2 : Menampilkan hasil dari fungsi GetTotalVehicle berdasarkan VehicleType : TotalRow(VehicleType)
 console.info(`\nRow : 2   ------------------------------------------------------------`);
-console.info(vechiles.GetTotalVehicleType('SUV'));
+console.info(purchaseVechiles.GetTotalVehicleType('SUV'));
+
+
+let incomeVehicles = new income(vehicleClass);
 
 // No. 3 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(VehicleType)
 console.info(`\nRow : 3   ------------------------------------------------------------`);
-console.info(vechiles.GetTotalIncomeVehicle('SUV'));
+console.info(incomeVehicles.GetTotalIncomeVehicle('SUV'));
 
 // No. 4 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(VehicleType)
 console.info(`\nRow : 4   ------------------------------------------------------------`);
-console.info(vechiles.GetTotalIncomeVehicle('TAXI'));
+console.info(incomeVehicles.GetTotalIncomeVehicle('TAXI'));
 
 // No. 5 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(VehicleType)
 console.info(`\nRow : 5   ------------------------------------------------------------`);
-console.info(vechiles.GetTotalIncomeVehicle('PrivateJet'));
+console.info(incomeVehicles.GetTotalIncomeVehicle('PrivateJet'));
 
 // No. 6 : Menampilkan hasil dari fungsi GetTotalIncomeVehicle berdasarkan VehicleType : TotalIncome(AllVehicleType)
 console.info(`\nRow : 6   ------------------------------------------------------------`);
-console.info(vechiles.GetTotalIncomeVehicle(''));
-
+console.info(incomeVehicles.GetTotalIncomeVehicle(''));
