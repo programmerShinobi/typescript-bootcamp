@@ -1,6 +1,6 @@
 // Overloading : Mengubah parameter
 class Calculator {
-    add(a: any, b: any ): any{
+    add(a: number|string, b: number|string ): number|string{
         if (typeof a === 'number' && typeof b === 'number') {
             return a + b
         } else {
