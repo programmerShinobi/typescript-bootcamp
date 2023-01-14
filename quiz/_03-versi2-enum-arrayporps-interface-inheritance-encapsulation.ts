@@ -191,12 +191,12 @@ const SUV = typeVehicle.SUV;
 const TAXI = typeVehicle.TAXI;
 const PrivateJet = typeVehicle.PrivateJet
 
-// let vehiclePurchase = new purchase(vehicleArray);
-// console.info(vehiclePurchase.GetTotalVehicle());
-// console.info(vehiclePurchase.GetTotalVehicle(SUV));
+let vehiclePurchase = new purchase(vehicleArray);
+console.info(vehiclePurchase.GetTotalVehicle());
+console.info(vehiclePurchase.GetTotalVehicle(SUV));
 
-// let vehicleIncome = new income(vehicleArray);
-// console.info(vehicleIncome.GetTotalIncomeVehicle(SUV));
-// console.info(vehicleIncome.GetTotalIncomeVehicle(TAXI));
-// console.info(vehicleIncome.GetTotalIncomeVehicle(PrivateJet));
-// console.info(vehicleIncome.GetTotalIncomeVehicle());
+let vehicleIncome = new income(vehicleArray);
+console.info(vehicleIncome.GetTotalIncomeVehicle(SUV));
+console.info(vehicleIncome.GetTotalIncomeVehicle(TAXI));
+console.info(vehicleIncome.GetTotalIncomeVehicle(PrivateJet));
+console.info(vehicleIncome.GetTotalIncomeVehicle());
