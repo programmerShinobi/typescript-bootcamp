@@ -1,4 +1,4 @@
-# JavaScript From Code X Academy
+# TypeScript From Code X Academy
 ## Learn TypeScript
 
 This template should help get you started developing with TypeScript.
