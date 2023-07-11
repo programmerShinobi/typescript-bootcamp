@@ -32,8 +32,8 @@ enum Month {
     Des
 };
 
-let January: Month.Jan;
-let February: Month.Feb;
+console.log(Month.Jan); // 0
+console.log(Month.Feb); // 1
 
 enum approvalStatus {
     draft,
@@ -42,10 +42,10 @@ enum approvalStatus {
     rejected
 };
 
-let status_a: approvalStatus.draft;
-let status_b: approvalStatus.submitted;
-let status_c: approvalStatus.approved;
-let status_d: approvalStatus.rejected;
+console.log(approvalStatus.draft);
+console.log(approvalStatus.submitted);
+console.log(approvalStatus.approved);
+console.log(approvalStatus.rejected);
 
 let discount: number;
 let itemCount = 10;
